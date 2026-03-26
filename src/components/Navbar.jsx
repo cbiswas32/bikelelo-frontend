@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { Link, NavLink } from "react-router-dom";
 import Logo from "../assets/logo/icon.png";
 import { LocationEdit, Menu, X } from "lucide-react";
+import LocationSelector from "./LocationSelector";
 
 const navList = [
   {
@@ -34,34 +35,34 @@ const locations = [
     label: "Hydrabad",
   },
 ];
-const LocationSelector = () => {
-  const [value, setValue] = useState("");
-  return (
-    <>
-      <label htmlFor="location" className="sr-only">
-        Location
-      </label>
-      <div className="relative">
-        <LocationEdit className="absolute left-2 top-1/2 -translate-y-1/2 w-4 h-4 text-primary-dull pointer-events-none" />
-        <select
-          id="location"
-          className="px-2 py-1 pl-8 border-2 border-solid border-primary-dull focus:outline-none focus:ring-1 focus:ring-primary/40 rounded-xl text-sm"
-          value={value}
-          onChange={(e) => {
-            setValue(e.target.value);
-          }}
-        >
-          <option value="">Select Location</option>
-          {locations.map((location) => (
-            <option key={location.id} value={location.id}>
-              {location.label}
-            </option>
-          ))}
-        </select>
-      </div>
-    </>
-  );
-};
+// const LocationSelector = () => {
+//   const [value, setValue] = useState("");
+//   return (
+//     <>
+//       <label htmlFor="location" className="sr-only">
+//         Location
+//       </label>
+//       <div className="relative">
+//         <LocationEdit className="absolute left-2 top-1/2 -translate-y-1/2 w-4 h-4 text-primary-dull pointer-events-none" />
+//         <select
+//           id="location"
+//           className="px-2 py-1 pl-8 border-2 border-solid border-primary-dull focus:outline-none focus:ring-1 focus:ring-primary/40 rounded-xl text-sm"
+//           value={value}
+//           onChange={(e) => {
+//             setValue(e.target.value);
+//           }}
+//         >
+//           <option value="">Select Location</option>
+//           {locations.map((location) => (
+//             <option key={location.id} value={location.id}>
+//               {location.label}
+//             </option>
+//           ))}
+//         </select>
+//       </div>
+//     </>
+//   );
+// };
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)

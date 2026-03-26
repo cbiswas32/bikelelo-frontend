@@ -3,7 +3,7 @@ import { Bike, Scooter, Zap, Search } from "lucide-react";
 import HERO_IMG from "../assets/bikeheroimage.png";
 import BIKE_LOTTIE from "../assets/lottie/oldrider.json";
 import { Player } from "@lottiefiles/react-lottie-player";
-
+import LocationSelector from "./LocationSelector";
 const BIKE_TYPE = [
   {
     id: "Bike",
@@ -75,10 +75,8 @@ function Hero() {
         <div className="bg-white shadow-md rounded-4xl">
           <ul className="flex flex-col md:flex-row flex m-8 gap-10 justify-around items-center">
             <li className="flex flex-col gap-1">
-              <label>Pickup Location</label>
-              <select>
-                <option>Please choose location</option>
-              </select>
+              <label htmlFor="location-selector">Pickup Location</label>
+              <LocationSelector />
             </li>
             <li className="hidden lg:block h-10 w-0.5 bg-primary/20 "></li>
             <li className="flex flex-col gap-1">
