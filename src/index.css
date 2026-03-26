@@ -2,13 +2,17 @@
 
 @import "tailwindcss";
 
-*{
+* {
   font-family: "Outfit", sans-serif;
 }
 
 @theme {
-  --color-primary: #2563EB;
-  --color-primary-dull: #1F58D8;
-  --color-light: #F1F5F9;
-  --color-border: #c4c7d2;
+  --color-primary: #DC2626;        /* red-600 — main actions */
+  --color-primary-dull: #B91C1C;   /* red-700 — hover/active states */
+  --color-light: #FFF5F5;          /* warm off-white background */
+  --color-border: #FECACA;         /* red-200 — subtle red-tinted borders */
+}
+
+.primary-button {
+  @apply bg-primary text-white rounded-full hover:bg-primary-dull cursor-pointer;
 }
